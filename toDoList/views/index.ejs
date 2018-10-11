@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/manifest.json"> 
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="frame"></div>
+    <div id="titre">
+        <h1><%= title %></h1>
+        <button id="add" type="button"> <i class="fa fa-plus fa-2x"></i></button>
+    </div>
+    <div id="liste">
+      <div id="formulaire">
+          <div id="hr"></div>
+          <form id="valider" action="/" method="post">
+            <input id="input" type="text" name="action" value="">
+            <input id="validerButton" type="submit" value="Valider">
+          </form> 
+      </div> 
+      <ul>
+        <% todolist.forEach(function(element, index) { %>
+          <li> 
+            <form id="index" action="/" method="post">
+              <input type="hidden" name="id" value= <%= index %> >
+              <span><%= element %></span>
+              <button id="icon" type="submit"> <i class="glyphicon glyphicon-remove"></i></button>
+            </form>
+          </li>
+        <% }); %>
+      </ul>  
+    </div>
+    <script type="text/javascript">
+      document.getElementById("validerButton").onclick = function () {
+        document.getElementById("formulaire").style.display = "none";
+      };
+
+      document.getElementById("add").onclick = function () {
+        document.getElementById("formulaire").style.display = "block";
+      };
+    </script>
+  </body>
+</html>

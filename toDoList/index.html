@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon-16x16.png">
+    <link rel="manifest" href="public/images/manifest.json"> 
+    <title>Ma TO-DO liste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' href='public/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="titre">
+      <h1>Ma TO-DO liste</h1>
+    </div>
+    <div id="liste">
+      <ul>
+          <li> 
+            <form id="index" action="/" method="post">
+              <input type="hidden" name="id" value= 0 >
+              <span>Pour l&#39;instant... Pas grand chose !</span>
+              <button id="icon" type="submit" style="border: none"> <i class="glyphicon glyphicon-remove"></i></button>
+            </form>
+          </li>
+      </ul>  
+    </div>
+    <div id="formulaire">
+      <form action="/" method="post">
+        Que dois-je faire ?
+        <input id="input" type="text" name="action" value="">
+        <input type="submit" value="Valider">
+      </form> 
+    </div> 
+  </body>
+</html>
